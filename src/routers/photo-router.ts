@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { photoServices } from "../services/photo-services";
+import { photoServices, updateLikes } from "../services/photo-services";
 
 export const photosRouter = Router();
 
@@ -32,6 +32,6 @@ photosRouter.patch('/:id', async (req: Request, res: Response) => {
      }
 
      const photo = await photoServices.updateLikes(id, likes)
-
+     
      res.status(200).json(photo)
 })

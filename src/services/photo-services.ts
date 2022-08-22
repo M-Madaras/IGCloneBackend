@@ -36,6 +36,7 @@ export const  updateLikes = async (
     );
 
     const updatedPhoto = res.value as Photo
+    // updatedPhoto.likes = inc
     return updatedPhoto
 };
 
