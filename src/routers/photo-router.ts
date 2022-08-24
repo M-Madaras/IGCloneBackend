@@ -22,11 +22,11 @@ photosRouter.post('/', async (req: Request, res: Response) => {
 
      res.status(201).send({ insteredId });
 });
-//updating something
+// patch / photo/{PHOTO_ID} with a body of { likes: 1}
 photosRouter.patch('/:id', async (req: Request, res: Response) => {
-     const {id } = req.params
+     const { id } = req.params
      const { likes } = req.body
-
+     console.log('likes',likes)
      if(!likes){
           res.status(400).send("Likes are required.")
      }
